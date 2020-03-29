@@ -9,7 +9,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 public class PizzaRecipeAdapter extends RecyclerView.Adapter {
+
+    ArrayList<PizzaRecipeItem> pizzaRecipeItems;
 
     @NonNull
     @Override
@@ -41,6 +45,7 @@ public class PizzaRecipeAdapter extends RecyclerView.Adapter {
             imageView = itemView.findViewById(R.id.pizzaImageView);
             title = itemView.findViewById(R.id.titleImageView);
             description = itemView.findViewById(R.id.descriptionImageView);
+
         }
     }
 }
