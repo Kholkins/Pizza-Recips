@@ -15,6 +15,10 @@ public class PizzaRecipeAdapter extends RecyclerView.Adapter {
 
     ArrayList<PizzaRecipeItem> pizzaRecipeItems;
 
+    public PizzaRecipeAdapter(ArrayList<PizzaRecipeItem> pizzaRecipeItems) {
+        this.pizzaRecipeItems = pizzaRecipeItems;
+    }
+
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -25,6 +29,7 @@ public class PizzaRecipeAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        PizzaRecipeItem pizzaRecipeItem = pizzaRecipeItems.get(position);
 
     }
 
