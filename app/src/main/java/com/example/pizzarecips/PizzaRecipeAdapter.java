@@ -37,6 +37,10 @@ public class PizzaRecipeAdapter extends RecyclerView.Adapter {
 
         public PizzaRecipeViewHolder(@NonNull View itemView) {
             super(itemView);
+
+            imageView = itemView.findViewById(R.id.pizzaImageView);
+            title = itemView.findViewById(R.id.titleImageView);
+            description = itemView.findViewById(R.id.descriptionImageView);
         }
     }
 }
