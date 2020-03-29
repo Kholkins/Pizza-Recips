@@ -37,7 +37,7 @@ public class PizzaRecipeAdapter extends RecyclerView.Adapter<PizzaRecipeAdapter.
 
     @Override
     public int getItemCount() {
-        return 0;
+        return pizzaRecipeItems.size();
     }
 
     public static class PizzaRecipeViewHolder extends RecyclerView.ViewHolder {

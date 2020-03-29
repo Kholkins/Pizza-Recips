@@ -1,6 +1,7 @@
 package com.example.pizzarecips;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -70,5 +71,9 @@ public class MainActivity extends AppCompatActivity {
                 Utils.RECIPE_10
                 ));
 
+        recyclerView = findViewById(R.id.recycleView);
+        recyclerView.setHasFixedSize(true);
+        adapter = new PizzaRecipeAdapter(pizzaRecipeItems);
+        layoutManager = new LinearLayoutManager(this);
     }
 }
