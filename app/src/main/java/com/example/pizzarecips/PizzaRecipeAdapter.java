@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class PizzaRecipeAdapter extends RecyclerView.Adapter {
+public class PizzaRecipeAdapter extends RecyclerView.Adapter<PizzaRecipeAdapter.PizzaRecipeViewHolder>{
 
     ArrayList<PizzaRecipeItem> pizzaRecipeItems;
 
@@ -21,16 +21,18 @@ public class PizzaRecipeAdapter extends RecyclerView.Adapter {
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public PizzaRecipeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.pizza_recips_item, parent, false);
         PizzaRecipeViewHolder pizzaRecipeViewHolder = new PizzaRecipeViewHolder(view);
         return pizzaRecipeViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull PizzaRecipeViewHolder holder, int position) {
         PizzaRecipeItem pizzaRecipeItem = pizzaRecipeItems.get(position);
-
+        holder.imageView.setImageResource(pizzaRecipeItem.getImageResource());
+        holder.title.setText(pizzaRecipeItem.getTitle());
+        holder.description.setText(pizzaRecipeItem.getDescription());
     }
 
     @Override
