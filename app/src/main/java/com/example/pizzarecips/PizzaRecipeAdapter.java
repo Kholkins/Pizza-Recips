@@ -1,6 +1,7 @@
 package com.example.pizzarecips;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +45,7 @@ public class PizzaRecipeAdapter extends RecyclerView.Adapter<PizzaRecipeAdapter.
         return pizzaRecipeItems.size();
     }
 
-    public static class PizzaRecipeViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class PizzaRecipeViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public ImageView imageView;
         public TextView title;
@@ -61,7 +62,7 @@ public class PizzaRecipeAdapter extends RecyclerView.Adapter<PizzaRecipeAdapter.
 
         @Override
         public void onClick(View v) {
-
+            Intent intent = new Intent(context, RecipeActivity.class);
         }
     }
 }
