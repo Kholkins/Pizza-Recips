@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -63,7 +62,15 @@ public class PizzaRecipeAdapter extends RecyclerView.Adapter<PizzaRecipeAdapter.
 
         @Override
         public void onClick(View v) {
+            int position = getAdapterPosition();
+            PizzaRecipeItem pizzaRecipeItem = pizzaRecipeItems.get(position);
+
             Intent intent = new Intent(context, RecipeActivity.class);
+            intent.putExtra("imageResource", pizzaRecipeItem.getImageResource());
+            intent.putExtra("Title", pizzaRecipeItem.getTitle());
+            intent.putExtra("description", pizzaRecipeItem.getDescription());
+            intent.putExtra("recipe", pizzaRecipeItem.getRecipe());
+
             context.startActivity(intent);
         }
     }
