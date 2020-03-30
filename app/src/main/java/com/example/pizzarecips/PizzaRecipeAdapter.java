@@ -67,7 +67,7 @@ public class PizzaRecipeAdapter extends RecyclerView.Adapter<PizzaRecipeAdapter.
 
             Intent intent = new Intent(context, RecipeActivity.class);
             intent.putExtra("imageResource", pizzaRecipeItem.getImageResource());
-            intent.putExtra("Title", pizzaRecipeItem.getTitle());
+            intent.putExtra("title", pizzaRecipeItem.getTitle());
             intent.putExtra("description", pizzaRecipeItem.getDescription());
             intent.putExtra("recipe", pizzaRecipeItem.getRecipe());
 
