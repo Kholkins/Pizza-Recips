@@ -1,8 +1,10 @@
 package com.example.pizzarecips;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,9 +16,11 @@ import java.util.ArrayList;
 public class PizzaRecipeAdapter extends RecyclerView.Adapter<PizzaRecipeAdapter.PizzaRecipeViewHolder>{
 
     ArrayList<PizzaRecipeItem> pizzaRecipeItems;
+    Context context;
 
-    public PizzaRecipeAdapter(ArrayList<PizzaRecipeItem> pizzaRecipeItems) {
+    public PizzaRecipeAdapter(ArrayList<PizzaRecipeItem> pizzaRecipeItems, Context context) {
         this.pizzaRecipeItems = pizzaRecipeItems;
+        this.context = context;
     }
 
     @NonNull
@@ -40,7 +44,7 @@ public class PizzaRecipeAdapter extends RecyclerView.Adapter<PizzaRecipeAdapter.
         return pizzaRecipeItems.size();
     }
 
-    public static class PizzaRecipeViewHolder extends RecyclerView.ViewHolder {
+    public static class PizzaRecipeViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public ImageView imageView;
         public TextView title;
@@ -52,6 +56,11 @@ public class PizzaRecipeAdapter extends RecyclerView.Adapter<PizzaRecipeAdapter.
             imageView = itemView.findViewById(R.id.pizzaImageView);
             title = itemView.findViewById(R.id.titleImageView);
             description = itemView.findViewById(R.id.descriptionImageView);
+
+        }
+
+        @Override
+        public void onClick(View v) {
 
         }
     }
