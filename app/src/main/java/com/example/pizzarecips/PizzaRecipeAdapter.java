@@ -53,6 +53,7 @@ public class PizzaRecipeAdapter extends RecyclerView.Adapter<PizzaRecipeAdapter.
 
         public PizzaRecipeViewHolder(@NonNull View itemView) {
             super(itemView);
+            itemView.setOnClickListener(this);
 
             imageView = itemView.findViewById(R.id.pizzaImageView);
             title = itemView.findViewById(R.id.titleImageView);
@@ -63,6 +64,7 @@ public class PizzaRecipeAdapter extends RecyclerView.Adapter<PizzaRecipeAdapter.
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(context, RecipeActivity.class);
+            context.startActivity(intent);
         }
     }
 }
