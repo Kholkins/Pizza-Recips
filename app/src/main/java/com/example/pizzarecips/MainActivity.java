@@ -1,6 +1,7 @@
 package com.example.pizzarecips;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,14 +11,17 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    RecyclerView recyclerView;
-    RecyclerView.Adapter adapter;
-    RecyclerView.LayoutManager layoutManager;
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
+    private GridLayoutManager layoutManager;
+    private int columnCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        columnCount = getResources().getInteger(R.integer.column_count);
 
         ArrayList<PizzaRecipeItem> pizzaRecipeItems = new ArrayList<>();
         pizzaRecipeItems.add(new PizzaRecipeItem(R.drawable.pizza1,
@@ -74,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycleView);
         recyclerView.setHasFixedSize(true);
         adapter = new PizzaRecipeAdapter(pizzaRecipeItems, this);
-        layoutManager = new LinearLayoutManager(this);
+        layoutManager = new GridLayoutManager(this,columnCount);
 
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(layoutManager);
